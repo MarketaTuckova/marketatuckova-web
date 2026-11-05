@@ -26,12 +26,13 @@ h1{font-size:clamp(48px,6vw,78px);margin:12px 0 8px}
 h2{font-size:clamp(30px,3.5vw,43px);margin:10px 0 16px}
 .subtitle{font-family:Georgia,serif;font-style:italic;color:var(--purple);font-size:21px;margin:14px 0}
 .intro{max-width:560px;font-size:17px;margin:16px 0 20px}
+/* 3D kniha: rozměry se řídí skutečným poměrem stran obálky. */
 .book-stage{display:flex;justify-content:center;align-items:center;perspective:1100px;padding:18px 38px 28px 15px;min-width:0}
-.book-3d{position:relative;width:min(100%,315px);transform-style:preserve-3d;transform:rotateY(-13deg) rotateX(2deg);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s;filter:drop-shadow(20px 22px 15px #59415d35);will-change:transform}
-.book-3d:hover,.book-3d:focus-visible{transform:rotateY(-32deg) rotateX(5deg) translateY(-7px);filter:drop-shadow(28px 29px 19px #59415d40)}
-.book{display:block;width:100%;height:auto;max-height:440px;object-fit:contain;position:relative;z-index:2;border-radius:2px 5px 5px 2px;box-shadow:inset 4px 0 8px #38244320;backface-visibility:hidden}
-.book-3d:before{content:"";position:absolute;z-index:0;top:1%;bottom:1%;right:-17px;width:23px;background:repeating-linear-gradient(90deg,#e6dfe4 0px,#fffaf5 2px,#ded6da 3px,#f9f5ef 4px);transform:translateZ(-8px) rotateY(10deg);border-radius:0 4px 4px 0;box-shadow:4px 2px 0 #6d4a7b}
-.book-3d:after{content:"";position:absolute;top:2%;bottom:2%;left:-8px;width:11px;background:linear-gradient(90deg,#4d315d,#a782b2 65%,#5b396b);transform:translateZ(-3px);border-radius:3px 0 0 3px}
+.book-3d{position:relative;display:inline-block;width:auto;max-width:100%;transform-style:preserve-3d;transform:rotateY(-13deg) rotateX(2deg);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s;filter:drop-shadow(20px 22px 15px #59415d35);will-change:transform;line-height:0}
+.book-3d:hover,.book-3d:focus-visible{transform:rotateY(-28deg) rotateX(5deg) translateY(-7px);filter:drop-shadow(28px 29px 19px #59415d40)}
+.book{display:block;width:auto;height:auto;max-width:min(100%,315px);max-height:440px;object-fit:contain;position:relative;z-index:2;border-radius:2px 4px 4px 2px;backface-visibility:hidden}
+.book-3d:before{content:"";position:absolute;z-index:0;top:1%;bottom:1%;right:-13px;width:18px;background:repeating-linear-gradient(90deg,#e6dfe4 0px,#fffaf5 2px,#ded6da 3px,#f9f5ef 4px);transform:translateZ(-8px) rotateY(10deg);border-radius:0 4px 4px 0;box-shadow:3px 2px 0 #6d4a7b}
+.book-3d:after{content:"";position:absolute;z-index:1;top:1%;bottom:1%;left:-8px;width:10px;background:linear-gradient(90deg,#4d315d,#a782b2 65%,#5b396b);transform:translateZ(-3px);border-radius:3px 0 0 3px}
 @media(prefers-reduced-motion:reduce){.book-3d{transition:none}}
 .section{padding:52px 24px}
 .center{text-align:center}
@@ -46,7 +47,8 @@ footer{background:#46334e;color:#f9f1fa;padding:24px;text-align:center;font-size
 .hero-grid{grid-template-columns:1fr;gap:26px}
 .hero{text-align:center;padding:34px 20px}
 .intro{margin:14px auto 20px}
-.book-stage{padding:12px 30px 25px 12px}.book-3d{width:min(68%,265px)}.book{max-height:360px}
+.book-stage{padding:12px 30px 25px 12px}
+.book{max-width:min(68vw,265px);max-height:360px}
 .nav{display:block;text-align:center}
 .links{justify-content:center;gap:14px;margin-top:8px}
 .section{padding:42px 20px}
