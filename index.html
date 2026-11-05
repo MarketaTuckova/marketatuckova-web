@@ -56,11 +56,19 @@ footer{background:#46334e;color:#f9f1fa;padding:24px;text-align:center;font-size
 h1{font-size:clamp(48px,12vw,70px)}
 }
 
-/* Jemný akvarelový nádech po obou stranách celého webu */
-body{background:#fcf9fc url("assets/akvarel-pozadi.jpg") center top / cover fixed no-repeat}
-.hero{background:linear-gradient(90deg,rgba(252,249,252,.30),rgba(255,255,255,.76) 23%,rgba(255,255,255,.76) 77%,rgba(252,249,252,.30))}
-.section,.section[style]{background:linear-gradient(90deg,rgba(252,249,252,.30),rgba(255,255,255,.88) 23%,rgba(255,255,255,.88) 77%,rgba(252,249,252,.30)) !important}
-@media(max-width:750px){body{background-size:auto 100%;background-attachment:scroll}.hero,.section,.section[style]{background:rgba(255,255,255,.75) !important}}
+/* Akvarel po stranách: sekce už obrázek nezakrývají. */
+body{
+  background-color:#fcf9fc;
+  background-image:linear-gradient(90deg,rgba(252,249,252,.06) 0%,rgba(252,249,252,.80) 30%,rgba(252,249,252,.92) 50%,rgba(252,249,252,.80) 70%,rgba(252,249,252,.06) 100%),url("assets/akvarel-pozadi.jpg");
+  background-position:center top,center top;
+  background-size:100% 100%,100% auto;
+  background-repeat:no-repeat,repeat-y;
+  background-attachment:fixed,fixed;
+}
+.hero,.section,.section[style]{background:transparent !important}
+@media(max-width:750px){
+  body{background-image:linear-gradient(90deg,rgba(252,249,252,.38),rgba(252,249,252,.86) 30%,rgba(252,249,252,.86) 70%,rgba(252,249,252,.38)),url("assets/akvarel-pozadi.jpg");background-size:100% 100%,auto 100vh;background-position:center top,center top;background-repeat:no-repeat,repeat-y;background-attachment:scroll,scroll}
+}
 </style>
 </head>
 <body>
