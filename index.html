@@ -26,7 +26,13 @@ h1{font-size:clamp(48px,6vw,78px);margin:12px 0 8px}
 h2{font-size:clamp(30px,3.5vw,43px);margin:10px 0 16px}
 .subtitle{font-family:Georgia,serif;font-style:italic;color:var(--purple);font-size:21px;margin:14px 0}
 .intro{max-width:560px;font-size:17px;margin:16px 0 20px}
-.book{display:block;width:auto;max-width:100%;height:auto;max-height:490px;margin:auto;border-radius:3px;object-fit:contain;box-shadow:18px 18px 36px #59415d30,0 4px 15px #59415d25}
+.book-stage{display:flex;justify-content:center;align-items:center;perspective:1100px;padding:18px 38px 28px 15px;min-width:0}
+.book-3d{position:relative;width:min(100%,315px);transform-style:preserve-3d;transform:rotateY(-13deg) rotateX(2deg);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s;filter:drop-shadow(20px 22px 15px #59415d35);will-change:transform}
+.book-3d:hover,.book-3d:focus-visible{transform:rotateY(-32deg) rotateX(5deg) translateY(-7px);filter:drop-shadow(28px 29px 19px #59415d40)}
+.book{display:block;width:100%;height:auto;max-height:440px;object-fit:contain;position:relative;z-index:2;border-radius:2px 5px 5px 2px;box-shadow:inset 4px 0 8px #38244320;backface-visibility:hidden}
+.book-3d:before{content:"";position:absolute;z-index:0;top:1%;bottom:1%;right:-17px;width:23px;background:repeating-linear-gradient(90deg,#e6dfe4 0px,#fffaf5 2px,#ded6da 3px,#f9f5ef 4px);transform:translateZ(-8px) rotateY(10deg);border-radius:0 4px 4px 0;box-shadow:4px 2px 0 #6d4a7b}
+.book-3d:after{content:"";position:absolute;top:2%;bottom:2%;left:-8px;width:11px;background:linear-gradient(90deg,#4d315d,#a782b2 65%,#5b396b);transform:translateZ(-3px);border-radius:3px 0 0 3px}
+@media(prefers-reduced-motion:reduce){.book-3d{transition:none}}
 .section{padding:52px 24px}
 .center{text-align:center}
 .content{max-width:780px;margin:auto}
@@ -40,7 +46,7 @@ footer{background:#46334e;color:#f9f1fa;padding:24px;text-align:center;font-size
 .hero-grid{grid-template-columns:1fr;gap:26px}
 .hero{text-align:center;padding:34px 20px}
 .intro{margin:14px auto 20px}
-.book{max-width:min(72%,290px);max-height:390px}
+.book-stage{padding:12px 30px 25px 12px}.book-3d{width:min(68%,265px)}.book{max-height:360px}
 .nav{display:block;text-align:center}
 .links{justify-content:center;gap:14px;margin-top:8px}
 .section{padding:42px 20px}
@@ -52,7 +58,7 @@ h1{font-size:clamp(48px,12vw,70px)}
 <body>
 <header><nav class="nav"><a class="brand" href="#domu">Markéta Tučková</a><div class="links"><a href="#kniha">O knize</a><a href="#autorka">O autorce</a><a href="#podpora">Podpora vydání</a></div></nav></header>
 <main>
-<section id="domu" class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Román Markéty Tučkové</div><h1>Láskytis<br>Acuta</h1><p class="subtitle">O lásce, rozhodnutích a osudu</p><p class="intro">Příběh mladé zdravotní sestry Kláry, která se ocitá na křižovatce citů, životních rozhodnutí a osudových okamžiků.</p><a class="btn" href="#kniha">Objevte příběh</a></div><div><img class="book" src="assets/obalka.jpg" alt="Přední obálka knihy Láskytis Acuta od Markéty Tučkové"></div></div></section>
+<section id="domu" class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Román Markéty Tučkové</div><h1>Láskytis<br>Acuta</h1><p class="subtitle">O lásce, rozhodnutích a osudu</p><p class="intro">Příběh mladé zdravotní sestry Kláry, která se ocitá na křižovatce citů, životních rozhodnutí a osudových okamžiků.</p><a class="btn" href="#kniha">Objevte příběh</a></div><div class="book-stage"><div class="book-3d" tabindex="0" aria-label="3D náhled knihy Láskytis Acuta"><img class="book" src="assets/obalka.jpg" alt="Přední obálka knihy Láskytis Acuta od Markéty Tučkové"></div></div></div></section>
 <section class="section" id="kniha"><div class="content center"><div class="eyebrow">O knize</div><h2>Když láska změní pravidla</h2><div class="divider"></div><p>Klára, mladá empatická zdravotní sestra, překročí hranici svých morálních zásad a zaplete se do milostného trojúhelníku.</p><p>Jsou její rozhodnutí správná? Zavede ji osud do náruče pravé lásky, nebo jí teprve velká životní ztráta ukáže, že se její osudový muž skrývá v někom jiném?</p><p>Jak moc nás ovlivňují osudové okamžiky a nakolik si zásadní události do života přitahujeme sami?</p></div></section>
 <section class="section" id="autorka" style="background:#fff"><div class="content center"><div class="eyebrow">Autorka</div><h2>Markéta Tučková</h2><div class="divider"></div><p>Seznamte se s autorkou románu <em>Láskytis Acuta</em>.</p><p>Fotografii a osobní představení autorky zde brzy doplníme.</p></div></section>
 <section class="section" id="podpora"><div class="content panel center"><div class="eyebrow">Připravujeme</div><h2>Pomozte příběhu na svět</h2><p>Pro vydání knihy připravujeme možnost podpory prostřednictvím platformy Donio.</p><span class="coming">Odkaz na sbírku brzy zveřejníme</span></div></section>
