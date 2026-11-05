@@ -55,6 +55,12 @@ footer{background:#46334e;color:#f9f1fa;padding:24px;text-align:center;font-size
 .panel{padding:25px 20px}
 h1{font-size:clamp(48px,12vw,70px)}
 }
+
+/* Jemný akvarelový nádech po obou stranách celého webu */
+body{background:#fcf9fc url("assets/akvarel-pozadi.jpg") center top / cover fixed no-repeat}
+.hero{background:linear-gradient(90deg,rgba(252,249,252,.30),rgba(255,255,255,.76) 23%,rgba(255,255,255,.76) 77%,rgba(252,249,252,.30))}
+.section,.section[style]{background:linear-gradient(90deg,rgba(252,249,252,.30),rgba(255,255,255,.88) 23%,rgba(255,255,255,.88) 77%,rgba(252,249,252,.30)) !important}
+@media(max-width:750px){body{background-size:auto 100%;background-attachment:scroll}.hero,.section,.section[style]{background:rgba(255,255,255,.75) !important}}
 </style>
 </head>
 <body>
